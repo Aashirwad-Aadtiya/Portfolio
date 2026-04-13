@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Portfolio</title>
+    <!-- Dark/Blue Synthwave Theme Base -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-synthwave84.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Background Code Editor IDE Replica -->
+    <div id="bg-editor-wrapper">
+      <!-- File Explorer Sidebar -->
+      <div id="bg-sidebar">
+        <div class="sidebar-title">EXPLORER</div>
+        <ul class="file-tree">
+          <li class="folder-root" style="margin-left: 0.5rem;">PORTFOLIO</li>
+          <li class="folder open" style="margin-left: 1rem;">
+            <span class="tree-icon">⌄</span> src
+            <ul class="sub-tree" style="margin-left: 1rem;">
+              <li><span class="tree-icon" style="color: #61dafb">{}</span> data.json</li>
+              <li><span class="tree-icon" style="color: #42a5f5">#</span> style.css</li>
+              <li><span class="tree-icon" style="color: #e34f26">&lt;&gt;</span> index.html</li>
+              <li class="active"><span class="tree-icon" style="color: #f7df1e">JS</span> config.js</li>
+            </ul>
+          </li>
+          <li class="folder" style="margin-left: 1rem;">
+            <span class="tree-icon">></span> public
+          </li>
+          <li class="folder" style="margin-left: 1rem;">
+            <span class="tree-icon">></span> components
+          </li>
+          <li class="folder" style="margin-left: 1rem;">
+            <span class="tree-icon">></span> store
+          </li>
+        </ul>
+      </div>
+
+      <!-- Editor Content Window -->
+      <div id="bg-editor-view">
+        <div class="editor-tabs">
+          <div class="tab active"><span style="color: #f7df1e; margin-right: 6px;">JS</span> config.js</div>
+          <div class="tab"><span style="color: #42a5f5; margin-right: 6px;">#</span> style.css</div>
+          <div class="tab"><span style="color: #e34f26; margin-right: 6px;">&lt;&gt;</span> index.html</div>
+        </div>
+        <div class="editor-content">
+          <pre id="bg-pre"><code id="bg-code" class="language-javascript"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foreground UI -->
+    <div id="ui-layer">
+      <div id="app"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

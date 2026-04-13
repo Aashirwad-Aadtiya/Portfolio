@@ -1,0 +1,98 @@
+{
+  "name": "Aashirwad Aadtiya",
+  "title": "Software Developer & AI/ML Engineer",
+  "email": "aadtiyaashirwad4573@gmail.com",
+  "about": "I am a final-year B.Tech student specialising in Computer Science and AI/ML at RGPV University, graduating July 2026. I build full-stack applications and production-grade AI pipelines — from a deployed Service Management System for a real client to an LLM-powered repository intelligence agent using Google Gemini and Supabase vector databases. I am comfortable across the full stack (Next.js, FastAPI, MongoDB) and across the AI/ML layer (TensorFlow, PyTorch, n8n, RAG pipelines). I do not just study these technologies — I ship them.",
+  "socials": [
+    { "name": "GitHub", "url": "https://github.com/Aashirwad-Aadtiya " },
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/aashirwad-aadtiya" }
+  ],
+  "skills": [
+    "Python",
+    "Java",
+    "JavaScript",
+    "Kotlin",
+    "React.js",
+    "Next.js",
+    "Tailwind CSS",
+    "Node.js",
+    "Spring Boot",
+    "FastAPI",
+    "TensorFlow",
+    "PyTorch",
+    "NumPy",
+    "Pandas",
+    "OpenCV",
+    "n8n",
+    "Google Gemini",
+    "Supabase",
+    "Vector DB",
+    "MongoDB",
+    "REST APIs",
+    "Git"
+  ],
+  "tools": [
+    { "name": "Python", "icon": "python" },
+    { "name": "Java", "icon": "java" },
+    { "name": "JavaScript", "icon": "js" },
+    { "name": "React", "icon": "react" },
+    { "name": "Next.js", "icon": "nextjs" },
+    { "name": "Tailwind", "icon": "tailwind" },
+    { "name": "Node.js", "icon": "nodejs" },
+    { "name": "FastAPI", "icon": "fastapi" },
+    { "name": "TensorFlow", "icon": "tensorflow" },
+    { "name": "PyTorch", "icon": "pytorch" },
+    { "name": "MongoDB", "icon": "mongodb" },
+    { "name": "Git", "icon": "git" },
+    { "name": "n8n", "icon": "./icons/n8n.svg" },
+    { "name": "Cursor", "icon": "./icons/cursor.svg" },
+    { "name": "Antigravity", "icon": "./icons/antigravity.svg" }
+  ],
+  "projects": [
+    {
+      "title": "Service Management System",
+      "description": "Production full-stack application built for a real electronics repair business. Manages service logs, inventory, credit settlements, and technician performance. Built with Next.js, MongoDB, and Tailwind CSS.",
+      "link": "https://csr-services-demo.vercel.app/",
+      "content": "A real client. A real deployment. A real business running on this application every day.<br><br><b>Features built:</b><br>• Service log management with status tracking and technician assignment.<br>• Credit settlement module with linked transaction history.<br>• Inventory management with real-time stock updates.<br>• Expense tracking and assistant salary management with audit logs.<br>• Real-time dashboard analytics with performance metrics and operational visibility.<br><br><b>Technical decisions:</b><br>• Next.js App Router for server-side rendering and fast page loads.<br>• MongoDB for flexible document storage matching the business's varied service data.<br>• Tailwind CSS for rapid, consistent UI across dynamic tables and forms.<br>• Deployed on Vercel with continuous delivery — zero-downtime updates.<br><br>This was a solo end-to-end project: requirements, architecture, development, client communication, deployment, and ongoing support."
+    },
+    {
+      "title": "RepoMind AI",
+      "description": "LLM-powered conversational agent that lets you query any GitHub repository in natural language. Built with n8n, Google Gemini, and Supabase vector DB.",
+      "link": "https://github.com/Aashirwad-Aadtiya/RepoMind_AI",
+      "content": "RepoMind AI is an end-to-end automated GenAI pipeline built entirely from scratch — no boilerplate frameworks, no tutorials.<br><br><b>How it works:</b><br>• An n8n automation pipeline fetches and parses any GitHub repository on demand via webhook trigger.<br>• Repository content is chunked, embedded using Google Gemini embeddings, and stored in a Supabase vector database.<br>• A multi-step prompt workflow powers a conversational AI agent that answers natural language questions about the codebase with full context retrieval.<br><br><b>Technical challenges solved:</b><br>• Designed custom chunking logic to handle context-window constraints during embedding.<br>• Managed webhook reliability and pipeline retry logic for large repositories.<br>• Optimised vector retrieval accuracy through embedding strategy iteration.<br><br>This project is a direct implementation of production RAG (Retrieval-Augmented Generation) architecture — the same pattern used in enterprise AI assistants."
+    },
+    {
+      "title": "Multimodal Document Intelligence Pipeline",
+      "description": "A dual-stream (vision + semantic) Document AI pipeline that converts complex, multi-column documents into structured, LLM-ready output. Built with Python, FastAPI, docTR, and TensorFlow.",
+      "link": "https://github.com/Aashirwad-Aadtiya/DocAi_Pipeline",
+      "content": "Most OCR tools treat documents as flat text. This pipeline treats them as structured spatial objects.<br><br><b>Core architecture:</b><br>• Dual-stream processing: a vision stream (docTR) captures layout and spatial relationships; a semantic stream reconstructs meaning and reading order.<br>• Spatial segmentation module using coordinate binning and adaptive y-axis heuristics restores logical reading order across multi-column and irregular layouts.<br>• Post-OCR normalisation layer reconstructs fragmented tokens into semantically coherent Markdown blocks ready for downstream LLM consumption.<br>• Coordinate-to-JSON transformation pipeline preserves table structure fidelity.<br><br><b>Results:</b><br>• ~90% improvement in table structure fidelity over baseline Tesseract extraction.<br>• Reliable parsing of complex financial, legal, and technical documents.<br><br>Served via FastAPI with a clean REST interface, deployed with CI/CD on Vercel."
+    },
+    
+    {
+      "title": "Network Traffic Analyzer",
+      "description": "Real-time Java application that captures live network packets, classifies encrypted HTTPS traffic via DNS and TLS SNI parsing, and generates exportable bandwidth analytics.",
+      "link": "https://github.com/Aashirwad-Aadtiya/Packet_analyzer",
+      "content": "Built to solve a personal curiosity: what is actually running on my network, and how much bandwidth is each application consuming?<br><br><b>Core capabilities:</b><br>• Live packet capture from network interfaces using Pcap4J.<br>• Domain identification via DNS parsing and TLS SNI extraction — classifies encrypted HTTPS traffic without decryption.<br>• Bidirectional flow tracking system associates packets with originating application domains.<br>• CDN traffic aggregation identifies application-level bandwidth usage (YouTube, Google services, etc.).<br>• Exportable CSV reports with domain hit counts, bandwidth totals, and transfer speeds using IP-to-domain caching and flow mapping.<br><br><b>Engineering highlights:</b><br>• Handles high-volume packet streams without dropping data using efficient flow key design.<br>• TLS SNI extraction works on encrypted traffic — no man-in-the-middle required.<br><br>Built entirely in Java using OOP design patterns with clean separation between capture, analysis, and reporting layers."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer",
+      "company": "Freelance — Electronics Repair Business Client",
+      "duration": "2024 - Present",
+      "description": "Sole engineer on a production Service Management System used daily by a real client. Handled the complete product lifecycle: requirements gathering, architecture, development, deployment on Vercel, and ongoing client support. Delivered real-time dashboards, inventory management, credit settlement, and expense tracking modules using Next.js, MongoDB, and Tailwind CSS."
+    },
+    {
+      "role": "B.Tech — Computer Science & Engineering (AI/ML Specialization)",
+      "company": "RGPV University, School of Information Technology, Bhopal",
+      "duration": "2022 - July 2026",
+      "description": "Final-year undergraduate with specialization in Artificial Intelligence and Machine Learning. Relevant coursework: Machine Learning, Deep Learning, Natural Language Processing, Data Structures & Algorithms, DBMS, Operating Systems, Object-Oriented Programming. Built four production-grade projects independently alongside academic work."
+    },
+    {
+      "role": "Higher Secondary — PCM + Informatics Practices",
+      "company": "Delhi Public School, Indore",
+      "duration": "Completed Jan 2022",
+      "description": "Completed Class XII with Physics, Chemistry, Mathematics, and Informatics Practices. Foundation in programming concepts and problem-solving that led directly into pursuing Computer Science engineering."
+    }
+  ]
+}
