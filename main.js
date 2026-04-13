@@ -175,7 +175,7 @@ function init() {
       <!-- Left Column -->
       <div class="left-column">
         <!-- Hero / Name Section -->
-        <div class="section-glass interactive-section section-name" data-target="name">
+        <div class="section-glass interactive-section section-name" data-target="name" style="position: relative;">
           <div class="collapsed-title">👋 Profile</div>
           <div class="inner-content">
             <h1 class="hero-title">${data.name}</h1>
@@ -189,6 +189,7 @@ function init() {
             </a>
             <div class="social-links" style="margin: 0; padding-bottom: 2rem;">
               ${data.socials.map(s => `<a href="${s.url}" class="social-link" target="_blank">${s.name}</a>`).join('')}
+              ${data.resumeLink ? `<a href="${data.resumeLink}" class="social-link" target="_blank" rel="noopener noreferrer">📄 Resume</a>` : ''}
             </div>
           </div>
         </div>

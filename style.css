@@ -327,7 +327,17 @@ pre[class*="language-"] {
   cursor: default;
   border-color: var(--accent-secondary);
   box-shadow: 0 15px 50px rgba(0, 210, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(6, 9, 19, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Brighten text colors to ensure the background editor is not distracting */
+#app.has-focus .section-glass.focused .hero-about,
+#app.has-focus .section-glass.focused .card-desc,
+#app.has-focus .section-glass.focused .card-detailed-content {
+  color: #f4f4f4;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 /* Typography styles */
