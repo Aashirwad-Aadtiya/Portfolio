@@ -200,22 +200,14 @@ function init() {
 
       <!-- Right Column -->
       <div class="right-column">
-        <!-- Projects Section -->
-        <div class="section-glass interactive-section section-projects" data-target="projects">
-          <div class="collapsed-title">🚀 Case Studies</div>
-          <div class="inner-content">
-            <h2 class="section-title">Case Studies</h2>
-            ${data.projects.map((proj, idx) => `
-              <div class="interactive-card case-study-card" data-target="project-${idx}">
-                <div class="card-header-flex">
-                  <h3 class="card-title">${proj.title}</h3>
-                  ${proj.content ? `<span class="expand-icon">+</span>` : ''}
-                </div>
-                <p class="card-desc">${proj.description}</p>
-                ${proj.link ? `<a href="${proj.link}" target="_blank" rel="noopener noreferrer" class="project-link" style="display: inline-block; margin-top: 0.5rem; color: var(--accent-secondary); text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.5px;">View ↗</a>` : ''}
-                ${proj.content ? `<div class="card-detailed-content">${proj.content}</div>` : ''}
-              </div>
-            `).join('')}
+        <!-- Capabilities Section -->
+        <div class="section-glass interactive-section section-skills" data-target="skills" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <div class="collapsed-title">⚡ Capabilities</div>
+          <div class="inner-content" style="width: 100%;">
+            <h2 class="section-title centered-title" style="justify-content: center; text-align: center;">Capabilities</h2>
+            <div class="tags-container" style="justify-content: center;">
+              ${data.skills.map((skill, i) => `<span class="tag" data-target-sub="skill-${i}">${skill}</span>`).join('')}
+            </div>
           </div>
         </div>
 
@@ -239,13 +231,37 @@ function init() {
       </div>
     </div> <!-- Close columns-wrapper -->
 
-    <!-- Horizontal Capabilities Section -->
-    <div class="section-glass interactive-section section-skills" data-target="skills" style="width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <div class="collapsed-title">⚡ Capabilities</div>
+    <!-- Horizontal Case Studies Section -->
+    <div class="section-glass interactive-section section-projects" data-target="projects" style="width: 100%; overflow: hidden;">
+      <div class="collapsed-title">🚀 Case Studies</div>
       <div class="inner-content" style="width: 100%;">
-        <h2 class="section-title centered-title" style="justify-content: center; text-align: center;">Capabilities</h2>
-        <div class="tags-container" style="justify-content: center;">
-          ${data.skills.map((skill, i) => `<span class="tag" data-target-sub="skill-${i}">${skill}</span>`).join('')}
+        <h2 class="section-title centered-title" style="justify-content: center; text-align: center;">Case Studies</h2>
+        
+        <div class="carousel-container">
+          <div class="carousel-track">
+            ${data.projects.map((proj, idx) => `
+              <div class="interactive-card case-study-card" data-target="project-${idx}">
+                <div class="card-header-flex">
+                  <h3 class="card-title">${proj.title}</h3>
+                  ${proj.content ? `<span class="expand-icon">+</span>` : ''}
+                </div>
+                <p class="card-desc">${proj.description}</p>
+                ${proj.link ? `<a href="${proj.link}" target="_blank" rel="noopener noreferrer" class="project-link" style="display: inline-block; margin-top: 0.5rem; color: var(--accent-secondary); text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.5px;">View ↗</a>` : ''}
+                ${proj.content ? `<div class="card-detailed-content">${proj.content}</div>` : ''}
+              </div>
+            `).join('')}
+            ${data.projects.map((proj, idx) => `
+              <div class="interactive-card case-study-card duplicate-card" data-target="project-${idx}">
+                <div class="card-header-flex">
+                  <h3 class="card-title">${proj.title}</h3>
+                  ${proj.content ? `<span class="expand-icon">+</span>` : ''}
+                </div>
+                <p class="card-desc">${proj.description}</p>
+                ${proj.link ? `<a href="${proj.link}" target="_blank" rel="noopener noreferrer" class="project-link" style="display: inline-block; margin-top: 0.5rem; color: var(--accent-secondary); text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.5px;">View ↗</a>` : ''}
+                ${proj.content ? `<div class="card-detailed-content">${proj.content}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
         </div>
       </div>
     </div>
@@ -365,6 +381,17 @@ function init() {
     sec.classList.add('flow-hidden');
     scrollObserver.observe(sec);
   });
+
+  // Auto-scroll timeline back to top when moving mouse off it
+  const experienceSection = document.querySelector('.section-experience');
+  if (experienceSection) {
+    experienceSection.addEventListener('mouseleave', () => {
+      const innerContent = experienceSection.querySelector('.inner-content');
+      if (innerContent) {
+        innerContent.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
 }
 
 init();

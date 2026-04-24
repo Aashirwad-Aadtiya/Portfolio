@@ -416,38 +416,105 @@ pre[class*="language-"] {
   background: rgba(0, 210, 255, 0.2);
 }
 
-/* Base Screen: Collapse details of projects and timeline */
-#app:not(.has-focus) .section-projects .interactive-card .card-desc,
-#app:not(.has-focus) .section-projects .interactive-card .card-detailed-content,
-#app:not(.has-focus) .section-projects .interactive-card .expand-icon,
+/* Base Screen: Collapse details of timeline */
 #app:not(.has-focus) .section-experience .interactive-card .card-desc,
 #app:not(.has-focus) .section-experience .interactive-card .card-meta {
   display: none;
 }
 
-/* Restrict the inner cards to a scrollable area to restore base screen fluid compact sizes */
-#app:not(.has-focus) .section-projects .inner-content,
+/* Restrict the timeline and other verticals to a scrollable area to restore base screen fluid compact sizes */
 #app:not(.has-focus) .section-experience .inner-content {
   max-height: 180px;
   overflow-y: auto;
   padding-right: 0.5rem;
 }
-#app:not(.has-focus) .section-projects .inner-content::-webkit-scrollbar,
 #app:not(.has-focus) .section-experience .inner-content::-webkit-scrollbar { width: 4px; }
-#app:not(.has-focus) .section-projects .inner-content::-webkit-scrollbar-thumb,
 #app:not(.has-focus) .section-experience .inner-content::-webkit-scrollbar-thumb {
   background: rgba(0, 210, 255, 0.4); border-radius: 10px;
 }
 
-#app:not(.has-focus) .section-projects .interactive-card,
 #app:not(.has-focus) .section-experience .interactive-card {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0.5rem;
   background: rgba(0, 0, 0, 0.05); border: 1px solid transparent;
 }
 
-#app:not(.has-focus) .section-projects .section-title,
 #app:not(.has-focus) .section-experience .section-title {
+  margin-bottom: 1rem;
+}
+
+/* Carousel specific base layout */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 1rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll-carousel 40s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1rem)); }
+}
+
+#app:not(.has-focus) .section-projects .carousel-track {
+  animation: scroll-carousel 40s linear infinite;
+}
+
+#app:not(.has-focus) .section-projects .interactive-card {
+  width: 350px;
+  flex-shrink: 0;
+  margin-bottom: 0; /* Override generic margin */
+  background: rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 255, 255, 0.02);
+  display: flex !important;
+  flex-direction: column;
+}
+
+#app:not(.has-focus) .section-projects .interactive-card .card-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.5rem;
+}
+
+#app:not(.has-focus) .section-projects .interactive-card .card-detailed-content,
+#app:not(.has-focus) .section-projects .interactive-card .expand-icon {
+  display: none;
+}
+
+/* Focused UI for Projects */
+#app.has-focus .section-glass.focused.section-projects .carousel-track {
+  animation: none;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+#app.has-focus .section-glass.focused.section-projects .duplicate-card {
+  display: none !important;
+}
+
+#app.has-focus .section-glass.focused.section-projects .interactive-card {
+  width: 100%;
+  max-width: 800px;
+}
+
+#app.has-focus .section-projects .section-title {
   margin-bottom: 1rem;
 }
 
@@ -517,6 +584,21 @@ pre[class*="language-"] {
   background: rgba(0, 210, 255, 0.05); color: var(--accent-secondary);
   padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
   border: 1px solid rgba(0, 210, 255, 0.15); transition: all 0.3s ease; cursor: pointer;
+}
+
+/* Adjust base sizing to pack capabilities neatly in right column */
+#app:not(.has-focus) .section-skills {
+  padding: 1.5rem;
+}
+#app:not(.has-focus) .section-skills .section-title {
+  margin-bottom: 0.5rem;
+}
+#app:not(.has-focus) .section-skills .tags-container {
+  gap: 0.4rem;
+}
+#app:not(.has-focus) .section-skills .tag {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
 }
 .tag:hover {
   background: var(--accent-secondary); color: #0d0b1a; transform: scale(1.08);
